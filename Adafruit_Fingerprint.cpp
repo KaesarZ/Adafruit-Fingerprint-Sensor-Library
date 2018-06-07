@@ -224,7 +224,7 @@ uint8_t Adafruit_Fingerprint::emptyDatabase(void) {
 /**************************************************************************/
 uint8_t Adafruit_Fingerprint::fingerFastSearch(void) {
   // high speed search of slot #1 starting at page 0x0000 and page #0x00A3
-  GET_CMD_PACKET(FINGERPRINT_HISPEEDSEARCH, 0x01, 0x00, 0x00, 0x00, 0xA3);
+  GET_CMD_PACKET(FINGERPRINT_HISPEEDSEARCH, 0x01, 0x00, 0x00, 0x03, 0xE8); //Scan 0 ~ 1000 -> 0x0000 ~ 0x03E8
   fingerID = 0xFFFF;
   confidence = 0xFFFF;
 
